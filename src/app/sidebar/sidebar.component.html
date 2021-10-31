@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-6 text-right" style='padding-right: 35px;'>
+        پیام ها - {{ messages.length}}
+    </div>
+    <div class="col-6 ">
+        <button class='btn btn-md' type="button" (click)="onSortDirection()">
+            
+            <i *ngIf="sortDirection==='asc'" class="fas fa-sort-amount-down"></i>
+            <i *ngIf="sortDirection==='desc'" class='fas fa-sort-amount-up'></i>
+            <span class="padding5 font-sm" *ngIf="sortDirection==='asc'">جدید ترین ها</span>
+            <span class="padding5 font-sm" *ngIf="sortDirection==='desc'">قدیمی ترین ها</span>
+        </button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <app-categories></app-categories>
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-12" slimScroll>
+        <app-message-item
+            *ngFor="let message of messages|filter:msgCatId:'messageCategoryID'|sort:['sentTime',sortDirection]"
+            [msg]="message"></app-message-item>
+    </div>
+</div>

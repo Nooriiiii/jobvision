@@ -1,0 +1,54 @@
+
+    <div *ngIf="messageDetail; else loading">
+        <div class="row">
+            <div class="col-10 text-right">
+                <h4 class="card-title">{{messageDetail.messageTitle}}</h4>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-sm"  (click)="remove()" >
+                    <i class="fas fa-trash"></i>
+                </button>
+                <button class="btn btn-sm" (click)="bookmark()">
+                    <i class='fas fa-star'></i>
+                </button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6  text-right">
+                <h6 class="card-text">{{messageDetail.messageBodyTitle}}</h6>
+            </div>
+            <div class="col-md-6  text-left">
+                <p class="card-text font-sm font-gray">ارسال شده در تاریخ: {{messageDetail.sentTime|jalali}}</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col  text-right">
+                <p class="card-text justify">{{messageDetail.messgeBodyText}}</p>
+            </div>   
+        </div>
+        <br>
+        <div class="row">
+            <div class="col  text-right">
+                <h6 class="card-text">{{messageDetail.messgeBodySignature}}</h6>
+            </div>   
+        </div>
+        <br>
+    </div>
+    <ng-template #loading>
+        <br>
+        <br>
+        <br>
+        <div id='load-img' class="row">
+            <div class="col text-center">
+                <img src="/assets/Images/loading.gif" alt="">
+            </div>
+        </div>
+        <div id='load-text' class="row">
+            <div class="col text-center">
+                جزییات پیام یافت نشد
+            </div>
+        </div>
+    </ng-template>

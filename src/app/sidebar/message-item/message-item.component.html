@@ -1,0 +1,24 @@
+<a [routerLink]="['/', msg.messageID ]">
+    <div class="card mb-2" >
+        <div class="card-body text-secondary">
+          <div class="row">
+            <div class="col-9 text-right">
+              <h6>{{msg.messageTitle}}</h6>
+            </div>
+            <div class="col-3">
+              <p class="card-text" *ngIf="msg.bookMark">⭐</p>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="font-sm col-8 text-right font-gray">
+              {{msg.jobTitle}}
+            </div>
+            <div class="font-sm col-4 font-gray">
+              {{msg.sentTime|jalali}}
+            </div>
+          </div>
+         
+        </div>
+      </div>
+</a>

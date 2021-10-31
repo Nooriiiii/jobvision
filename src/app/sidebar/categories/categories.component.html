@@ -1,0 +1,5 @@
+
+<select class="form-control font-sm" [(ngModel)] ='categoryId' (change)="setCategory()">
+    <option class="opt" value="">همه پیام ها</option>
+    <option class="opt" [value]="c.id" *ngFor="let c of categories">{{c.displayTitle}}</option>
+</select>
